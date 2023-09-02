@@ -13,9 +13,8 @@ const analyzer = {
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
     const contarcaracteres = text.length
-    console.log(contarcaracteres)
-    if ((text) =="") {return "0"}
-    else {return contarcaracteres}
+    if ((text) === "") { return "0" }
+    else { return contarcaracteres }
   },
   getCharacterCountExcludingSpaces: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
@@ -42,14 +41,15 @@ const analyzer = {
       }
       return numeropalabras
     }
-    const separarcadenas = text.split(" ")
-    const quitarespacio = separarcadenas.join("")
+    const separarcad = text.split(" ")
+    const quitarespacio = separarcad.join("")
     const largopalabras = quitarespacio.length
     const resultado = obtenernumpalabras()
     const promedio = largopalabras / resultado
     const limitardecimales = promedio.toFixed(2)
+    const anumber = parseFloat(limitardecimales)
     if (text) {
-      return limitardecimales
+      return anumber
     }
     else {
       return "0"
@@ -60,8 +60,8 @@ const analyzer = {
     const separar = text.split(" ")
     let contarnumeros = 0
     for (let i = 0; i < separar.length; i++) {
-      const numeroscadena = parseInt(separar[i])
-      if (!isNaN(numeroscadena)) {
+      const numeroscadena = parseFloat(separar[i])
+      if ((!isNaN(numeroscadena)) && (!/[a-zA-Z]/.test(separar[i]))) {
         contarnumeros++;
       }
     }
@@ -73,7 +73,7 @@ const analyzer = {
     let sumanumeros = 0.0
     for (let i = 0; i < cadenas.length; i++) {
       const solonumeros = parseFloat(cadenas[i])
-      if (!isNaN(solonumeros)) {
+      if ((!isNaN(solonumeros)) && (!/[a-zA-Z]/.test(cadenas[i]))) {
         sumanumeros += solonumeros
       }
     }
