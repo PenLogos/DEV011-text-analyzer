@@ -27,5 +27,11 @@ userinput.addEventListener("keyup", funcionalidades)
 const btn = document.getElementById("reset-button")
 function limpiarmetricas() {
   userinput.value = ("")
+  mostrarcaracteres.textContent = "0"
+  mostrarpalabras.textContent = "0"
+  mostrarcaracteressinespacios.textContent = "0"
+  mostrarpromedio.textContent = "0"
+  mostrarnumeros.textContent = "0"
+  mostrarsuma.textContent = "0"
 }
 btn.addEventListener("click", limpiarmetricas)
