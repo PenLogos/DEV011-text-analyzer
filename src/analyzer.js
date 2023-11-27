@@ -70,6 +70,7 @@ const analyzer = {
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
     const cadenas = text.split(" ")
+    console.log(cadena)
     let sumanumeros = 0.0
     for (let i = 0; i < cadenas.length; i++) {
       const solonumeros = parseFloat(cadenas[i])
